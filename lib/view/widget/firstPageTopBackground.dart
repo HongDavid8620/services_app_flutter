@@ -1,4 +1,4 @@
-import 'package:cotafer_server_status/view/widget/backgroundSingIn.dart';
+import 'package:services_flutter/view/widget/backgroundSingIn.dart';
 import 'package:flutter/material.dart';
 
 class TopBackground extends StatelessWidget {

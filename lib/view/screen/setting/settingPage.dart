@@ -1,6 +1,6 @@
-import 'package:cotafer_server_status/view/screen/setting/changePassword.dart';
-import 'package:cotafer_server_status/view/screen/setting/notificationSetting.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/textField_bloc.dart';
+import 'package:services_flutter/view/screen/setting/changePassword.dart';
+import 'package:services_flutter/view/screen/setting/notificationSetting.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/textField_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

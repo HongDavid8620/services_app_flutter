@@ -1,12 +1,12 @@
-import 'package:cotafer_server_status/view/screen/forgotPassword/enterDigit.dart';
-import 'package:cotafer_server_status/view/widget/firstPageTopBackground.dart';
-import 'package:cotafer_server_status/view/widget/inputField/inputTextField.dart';
-import 'package:cotafer_server_status/view/widget/customButton.dart';
-import 'package:cotafer_server_status/view/widget/showLoadingDialog.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldState.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/textField_bloc.dart';
-import 'package:cotafer_server_status/view_model/service/password/requestSendCodeService.dart';
-import 'package:cotafer_server_status/view_model/validate/validateFunction.dart';
+import 'package:services_flutter/view/screen/forgotPassword/enterDigit.dart';
+import 'package:services_flutter/view/widget/firstPageTopBackground.dart';
+import 'package:services_flutter/view/widget/inputField/inputTextField.dart';
+import 'package:services_flutter/view/widget/customButton.dart';
+import 'package:services_flutter/view/widget/showLoadingDialog.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/textField_bloc.dart';
+import 'package:services_flutter/view_model/service/password/requestSendCodeService.dart';
+import 'package:services_flutter/view_model/validate/validateFunction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

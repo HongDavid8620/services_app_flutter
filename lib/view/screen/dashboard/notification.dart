@@ -1,7 +1,8 @@
-import 'package:cotafer_server_status/view/widget/NotificationList.dart';
-import 'package:cotafer_server_status/view_model/service/notification/notificatinRespone.dart';
-import 'package:cotafer_server_status/view_model/service/notification/notificationService.dart';
+import 'package:services_flutter/view/widget/NotificationList.dart';
+import 'package:services_flutter/view_model/service/notification/notificatinRespone.dart';
+import 'package:services_flutter/view_model/service/notification/notificationService.dart';
 import 'package:flutter/material.dart';
+
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);

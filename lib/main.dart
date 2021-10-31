@@ -1,10 +1,10 @@
-import 'package:cotafer_server_status/view/screen/dashboard/dashboard.dart';
-import 'package:cotafer_server_status/view/screen/signIn/signWrapper.dart';
-import 'package:cotafer_server_status/view_model/bloc/expired/tokenExpired_bloc.dart';
-import 'package:cotafer_server_status/view_model/bloc/expired/tokenExpired_event.dart';
-import 'package:cotafer_server_status/view_model/bloc/network/network_bloc.dart';
-import 'package:cotafer_server_status/view_model/bloc/network/network_event.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/textField_bloc.dart';
+import 'package:services_flutter/view/screen/dashboard/dashboard.dart';
+import 'package:services_flutter/view/screen/signIn/signWrapper.dart';
+import 'package:services_flutter/view_model/bloc/expired/tokenExpired_bloc.dart';
+import 'package:services_flutter/view_model/bloc/expired/tokenExpired_event.dart';
+import 'package:services_flutter/view_model/bloc/network/network_bloc.dart';
+import 'package:services_flutter/view_model/bloc/network/network_event.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/textField_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(
               primaryColor: Colors.white,
             ),
-            home: DashBoardPage()));
+            home: SignInWrapper()));
     
   }
 }

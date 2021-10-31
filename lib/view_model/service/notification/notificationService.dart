@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:cotafer_server_status/view_model/service/notification/notificatinRespone.dart';
-import 'package:cotafer_server_status/view_model/service/statusDashboard/statusRespone.dart';
+import 'package:services_flutter/view_model/service/notification/notificatinRespone.dart';
+import 'package:services_flutter/view_model/service/statusDashboard/statusRespone.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 

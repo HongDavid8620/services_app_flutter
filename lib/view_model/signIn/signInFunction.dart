@@ -1,8 +1,10 @@
-import 'package:cotafer_server_status/view/screen/dashboard/dashboard.dart';
-import 'package:cotafer_server_status/view/widget/showLoadingDialog.dart';
-import 'package:cotafer_server_status/view_model/bloc/debouncer/debouncer.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldEvent.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldState.dart';
+// ignore_for_file: avoid_print
+
+import 'package:services_flutter/view/screen/dashboard/dashboard.dart';
+import 'package:services_flutter/view/widget/showLoadingDialog.dart';
+import 'package:services_flutter/view_model/bloc/debouncer/debouncer.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldEvent.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -70,7 +72,7 @@ class SignInFunction {
   emailChangeEvent(_email, {delay}) {
     final _debouncer = Debouncer(milliseconds: delay ?? 100);
     _debouncer.run(() {
-      emailValidateBloc!.add(EmailCheckEmptyEvent(field: _email!));
+      emailValidateBloc!.add(EmailCheckEvent(field: _email!));
     });
   }
 

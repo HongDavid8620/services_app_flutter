@@ -1,7 +1,7 @@
 import 'dart:async';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldEvent.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldState.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldValidation.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldEvent.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldValidation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TextFieldBloc extends Bloc<TextFieldEvent, TextFieldState> with TextFieldValidation {

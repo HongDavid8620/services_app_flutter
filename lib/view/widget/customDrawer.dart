@@ -1,10 +1,10 @@
-import 'package:cotafer_server_status/view/screen/dashboard/dashboard.dart';
-import 'package:cotafer_server_status/view/screen/profile/profilePage.dart';
-import 'package:cotafer_server_status/view/screen/setting/settingPage.dart';
-import 'package:cotafer_server_status/view/screen/signIn/signIn.dart';
-import 'package:cotafer_server_status/view/screen/signIn/signWrapper.dart';
-import 'package:cotafer_server_status/view/widget/DrawerList.dart';
-import 'package:cotafer_server_status/view_model/service/auth/logoutService.dart';
+import 'package:services_flutter/view/screen/dashboard/dashboard.dart';
+import 'package:services_flutter/view/screen/profile/profilePage.dart';
+import 'package:services_flutter/view/screen/setting/settingPage.dart';
+import 'package:services_flutter/view/screen/signIn/signIn.dart';
+import 'package:services_flutter/view/screen/signIn/signWrapper.dart';
+import 'package:services_flutter/view/widget/DrawerList.dart';
+import 'package:services_flutter/view_model/service/auth/logoutService.dart';
 import 'package:flutter/material.dart';
 
 class CustomeDrawer extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:connectivity/connectivity.dart';
-import 'package:cotafer_server_status/view_model/bloc/network/network_event.dart';
-import 'package:cotafer_server_status/view_model/bloc/network/network_state.dart';
+import 'package:services_flutter/view_model/bloc/network/network_event.dart';
+import 'package:services_flutter/view_model/bloc/network/network_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NetworkBloc extends Bloc<NetworkEvent, NetworkState> {

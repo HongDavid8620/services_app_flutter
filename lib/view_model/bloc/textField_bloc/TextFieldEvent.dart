@@ -1,4 +1,4 @@
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldState.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.dart';
 
 abstract class TextFieldEvent {}
 

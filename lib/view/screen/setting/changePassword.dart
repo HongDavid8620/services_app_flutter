@@ -1,12 +1,12 @@
-import 'package:cotafer_server_status/view/widget/customButton.dart';
-import 'package:cotafer_server_status/view/widget/inputField/inputTextField.dart';
-import 'package:cotafer_server_status/view/widget/showLoadingDialog.dart';
-import 'package:cotafer_server_status/view/widget/textErrorMessage.dart';
-import 'package:cotafer_server_status/view_model/bloc/debouncer/debouncer.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldEvent.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldState.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/textField_bloc.dart';
-import 'package:cotafer_server_status/view_model/service/password/changePasswordServicer.dart';
+import 'package:services_flutter/view/widget/customButton.dart';
+import 'package:services_flutter/view/widget/inputField/inputTextField.dart';
+import 'package:services_flutter/view/widget/showLoadingDialog.dart';
+import 'package:services_flutter/view/widget/textErrorMessage.dart';
+import 'package:services_flutter/view_model/bloc/debouncer/debouncer.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldEvent.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/textField_bloc.dart';
+import 'package:services_flutter/view_model/service/password/changePasswordServicer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

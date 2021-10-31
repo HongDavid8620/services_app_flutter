@@ -1,8 +1,8 @@
-import 'package:cotafer_server_status/view/screen/setting/changePassword.dart';
-import 'package:cotafer_server_status/view/widget/showLoadingDialog.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldEvent.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/TextFieldState.dart';
-import 'package:cotafer_server_status/view_model/bloc/textField_bloc/textField_bloc.dart';
+import 'package:services_flutter/view/screen/setting/changePassword.dart';
+import 'package:services_flutter/view/widget/showLoadingDialog.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldEvent.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.dart';
+import 'package:services_flutter/view_model/bloc/textField_bloc/textField_bloc.dart';
 import 'package:flutter/widgets.dart';
 
 class ChangePasswordFunction {

@@ -1,4 +1,4 @@
-import 'package:cotafer_server_status/view/widget/inputField/inputTextField.dart';
+import 'package:services_flutter/view/widget/inputField/inputTextField.dart';
 import 'package:flutter/material.dart';
 
 class TextfieldWithHeader extends StatelessWidget {

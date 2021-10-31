@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:cotafer_server_status/view_model/bloc/expired/tokenExpired_event.dart';
-import 'package:cotafer_server_status/view_model/bloc/expired/tokenExpired_state.dart';
+import 'package:services_flutter/view_model/bloc/expired/tokenExpired_event.dart';
+import 'package:services_flutter/view_model/bloc/expired/tokenExpired_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

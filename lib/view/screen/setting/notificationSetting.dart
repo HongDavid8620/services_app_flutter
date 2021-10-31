@@ -1,6 +1,6 @@
-import 'package:cotafer_server_status/view/widget/loadingPage.dart';
-import 'package:cotafer_server_status/view_model/service/setting/notification/settNotificationServicer.dart';
-import 'package:cotafer_server_status/view_model/service/setting/notification/switchNotificationServicer.dart';
+import 'package:services_flutter/view/widget/loadingPage.dart';
+import 'package:services_flutter/view_model/service/setting/notification/settNotificationServicer.dart';
+import 'package:services_flutter/view_model/service/setting/notification/switchNotificationServicer.dart';
 import 'package:flutter/material.dart';
 
 class NotificationSetting extends StatefulWidget {

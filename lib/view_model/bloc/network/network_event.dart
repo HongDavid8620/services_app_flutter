@@ -1,5 +1,5 @@
 
-import 'package:cotafer_server_status/view_model/bloc/network/network_state.dart';
+import 'package:services_flutter/view_model/bloc/network/network_state.dart';
 
 abstract class NetworkEvent {}
 

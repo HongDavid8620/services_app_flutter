@@ -1,6 +1,6 @@
 
 
-import 'package:cotafer_server_status/view_model/bloc/expired/tokenExpired_state.dart';
+import 'package:services_flutter/view_model/bloc/expired/tokenExpired_state.dart';
 
 abstract class ExpiredEvent {}
 
