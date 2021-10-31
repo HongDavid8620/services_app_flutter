@@ -12,7 +12,7 @@ class TextFieldValidation {
     if (field == null) {
       return false;
     }
-    return RegExp(r"^[+]+([\d\ ]{13,18})$").hasMatch(field);  
+    return RegExp(r"^[+]+([\d\ ]{13,18})$").hasMatch(field);
   }
 
   bool pinValidate(field) {
@@ -26,18 +26,11 @@ class TextFieldValidation {
     if (field == null) {
       return false;
     }
-    if (field.length > 50){
-      return false;
-    }
-
     return RegExp(r'^[\w-\.]+@([\w-]+\.)+[a-z]{2,4}$').hasMatch(field);
   }
 
   bool validateWithSpecialChar(field) {
     if (field == null) {
-      return false;
-    }
-    if (field.length > 30){
       return false;
     }
     return RegExp(

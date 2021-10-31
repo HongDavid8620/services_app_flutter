@@ -1,6 +1,3 @@
-import 'package:services_flutter/view/widget/loadingPage.dart';
-import 'package:services_flutter/view_model/service/setting/notification/settNotificationServicer.dart';
-import 'package:services_flutter/view_model/service/setting/notification/switchNotificationServicer.dart';
 import 'package:flutter/material.dart';
 
 class NotificationSetting extends StatefulWidget {
@@ -25,8 +22,8 @@ class _NotificationSettingState extends State<NotificationSetting> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: NotificationToggle(),
+            padding : const EdgeInsets.all(10.0),
+            child   : NotificationToggle(),
           ),
         ],
       ),
@@ -45,47 +42,24 @@ class NotificationToggle extends StatefulWidget {
 
 class _NotificationToggleState extends State<NotificationToggle> {
   bool _toggle = false;
-  bool switchChange = false;
-  Future? _notificationSwitch;
-
-  @override
-  void initState() {
-    _notificationSwitch = SettingNotificationService.getNotificationSet();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(      
-        future: _notificationSwitch,
-        builder: (context, snapshot) {
-          if (snapshot.hasData && snapshot.data != '') {
-            
-            if(!switchChange)
-              (snapshot.data == '1') ? _toggle = true : _toggle = false;
-
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Notification',
-                  style: TextStyle(fontSize: 19, letterSpacing: 0.6),
-                ),
-                Switch(
-                    activeColor : Colors.indigo,
-                    value       : _toggle,
-                    onChanged   : (value) {
-                      SwitchNotificationService.changeNotificationSwitch(value);
-                      setState(() {
-                        switchChange  = true;
-                        _toggle       = value;
-                      });
-                    })
-              ],
-            );
-          } else {
-            return Container();
-          }
-        });
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          'Notification',
+          style: TextStyle(fontSize: 19, letterSpacing: 0.6),
+        ),
+        Switch(
+            activeColor : Colors.indigo,
+            value       : _toggle,
+            onChanged   : (value) {
+              setState(() {
+                _toggle = value;
+              });
+            })
+      ],
+    );
   }
 }

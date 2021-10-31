@@ -12,7 +12,7 @@ class InputTextField extends StatefulWidget {
     this.validate   : false,
     this.onChanged, 
     this.onFieldSubmitted, 
-    this.onSaved, this.focusNode, this.maxLength:50, 
+    this.onSaved, this.focusNode, 
   }) : super(key: key);
 
   final Icon? icon;
@@ -22,7 +22,6 @@ class InputTextField extends StatefulWidget {
   final String value;
   final bool numberType;
   final bool validate;
-  final int maxLength;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onFieldSubmitted;
   final FormFieldSetter<String>? onSaved;
@@ -54,7 +53,7 @@ class _InputTextFieldState extends State<InputTextField> {
           //textfiels
           Expanded(
             child: SizedBox(
-              height: 63,
+              height: 55,
               child : Theme(
                 data: ThemeData(
                   primaryColor: Colors.redAccent,
@@ -66,8 +65,6 @@ class _InputTextFieldState extends State<InputTextField> {
                       color   : widget.textColor,
                       fontSize: 20),
                   initialValue    : widget.value,
-                  maxLength: widget.maxLength,
-
                   onChanged       : widget.onChanged,
                   onSaved         : widget.onSaved,
                   onFieldSubmitted: widget.onFieldSubmitted,
@@ -81,7 +78,6 @@ class _InputTextFieldState extends State<InputTextField> {
                         borderSide: widget.validationBorder(),
                         ),
                     
-                    counterText: "",
                     hintText    : '${widget.text}',
                     hintStyle: TextStyle(color: Color.fromRGBO(169, 169, 169, 0.7),letterSpacing: 0.1),
                     // errorBorder : InputBorder.none,

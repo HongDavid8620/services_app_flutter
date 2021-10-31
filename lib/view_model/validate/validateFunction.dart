@@ -3,7 +3,6 @@ import 'package:services_flutter/view/widget/showLoadingDialog.dart';
 import 'package:services_flutter/view_model/bloc/debouncer/debouncer.dart';
 import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldEvent.dart';
 import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.dart';
-import 'package:services_flutter/view_model/service/auth/loginService.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -32,27 +31,31 @@ class SignInFunction {
   }
 
   //On press sign in button
-  pushNavigator(emailState, passwdState, context, { signInBloc }) async {
+  pushNavigator(emailState, passwdState, context) async {
     if(passwd !='' && emailaddress != ''){
+      // print('state1: ${emailState.textFieldError}');
+      // print('state2: ${passwdState.textFieldError}');
       if (checkBeforePushNavigator(emailState, passwdState)) {
         fromKey.currentState!.save();
         ShowLoadingDialog(context).showLoaderDialog();
 
+      print('checked: $emailaddress $passwd');
         await Future.delayed(Duration(milliseconds: 1000));
         Navigator.pop(context);
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => DashBoardPage()));
         try {
+          if (checkBox) {
             fromKey.currentState!.save();
-            _rememberMe(emailaddress, passwd, checkBox);
+            _rememberMe(emailaddress, passwd, false);
+          } else {
+            _rememberMe(emailaddress, passwd, true);
+          }
         } catch (e) {
           print('error $e');
         }
-        try{
-        if (await LoginService.getAuthorizeToken(emailaddress, passwd) != null){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DashBoardPage()));
-        }else{
-          signInBloc!.add(SubmitEvent(textFieldError: TextFieldError.Invalid));
-        }
-        }catch(e){print('error: $e');}
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => DashBoardPage()));
       }
     }
   }
@@ -73,13 +76,11 @@ class SignInFunction {
     passwordValidateBloc!.add(PasswordCheckEmptyEvent(field: _passwd!));
   }
 
-  validateErrorMessage(_emailState, _passwdState , _signInState) {
+  validateErrorMessage(_emailState, _passwdState) {
     if (emailErrorMessage(_emailState) != '') {
       return emailErrorMessage(_emailState);
     } else if (_passwdErrorMessage(_passwdState) != '') {
       return _passwdErrorMessage(_passwdState);
-    } else if (_signInErrorMessage(_signInState) != '') {
-      return _signInErrorMessage(_signInState);
     } else
       return '';
   }
@@ -104,17 +105,6 @@ class SignInFunction {
     }
   }
   
-  _signInErrorMessage(TextFieldState state) {
-    if (!checkValidation(state)) {
-      return 'Your username and your password is not correct';
-    } else if (state.textFieldError == TextFieldError.ApiRespone) {
-      return 'Please check your connection again before Sign In';
-    } else {
-      return '';
-    }
-  }
-  
-
   checkValidation(TextFieldState state) {
     if (state.textFieldError == TextFieldError.Invalid ) {
       return false;
@@ -127,11 +117,11 @@ class SignInFunction {
   _rememberMe(_email, _passwd, bool _checkBox) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     if (_checkBox) {
+      prefs.setString('username', 'null');
+      prefs.setString('password', 'null');
+    } else {
       prefs.setString('username', _email);
       prefs.setString('password', _passwd);
-    } else {
-      prefs.setString('username', '');
-      prefs.setString('password', '');
     }
   }
 }

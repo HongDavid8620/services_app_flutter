@@ -5,16 +5,12 @@ class NotificationWidgetList extends StatelessWidget {
     Key? key,
     this.time           : '02:34:21 - 02 04 2021',
     this.statusText     : 'is went wrong',
-    this.serverName     : 'Server Name', 
-    this.serviceName    : 'Service Name',
-    this.notificateColor: Colors.yellow, 
+    this.notificateColor: Colors.yellow,
   }) : super(key: key);
 
   final notificateColor;
   final statusText;
   final time;
-  final serverName;
-  final serviceName;
 
   @override
   Widget build(BuildContext context) {
@@ -37,20 +33,26 @@ class NotificationWidgetList extends StatelessWidget {
               children: [
                 RichText(
                     text: TextSpan(
-                      style : TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w500),
-                      text  : '$serviceName | $serverName ',
+                      style : TextStyle(
+                          fontSize  : 16,
+                          color     : Colors.black,
+                          fontWeight: FontWeight.w500),
+                      text  : 'Service name | Server name ',
+                      
                       children: [
                         TextSpan(
                           text: '$statusText',
-                          style: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.normal),
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal),
                         ),
                       ],
-                    )
-                ),
+                    )),
                 Padding(
                   padding : const EdgeInsets.only(top: 8),
                   child   : Text(
-                    '$time',
+                    '02:34:21 - 02 04 2021',
                   ),
                 )
               ],

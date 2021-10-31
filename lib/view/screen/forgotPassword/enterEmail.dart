@@ -5,7 +5,6 @@ import 'package:services_flutter/view/widget/customButton.dart';
 import 'package:services_flutter/view/widget/showLoadingDialog.dart';
 import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.dart';
 import 'package:services_flutter/view_model/bloc/textField_bloc/textField_bloc.dart';
-import 'package:services_flutter/view_model/service/password/requestSendCodeService.dart';
 import 'package:services_flutter/view_model/validate/validateFunction.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -116,8 +115,6 @@ class _EnterEmailState extends State<EnterEmail> {
                                       onPressed: () async {
                                         if (_errorMessage == '') {
                                           await loading();
-                                          var respone = await SendCodeService.sendRequestCode();  //request send code to api
-                                          if(respone != 'error' )
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(

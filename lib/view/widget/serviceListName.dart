@@ -43,7 +43,7 @@ class SerivceListName extends StatelessWidget {
                     serviceName == null
                         ? LoadingStatusContainer()
                         : Text(
-                            '$serviceName',
+                            'Service name',
                             style: TextStyle(fontSize: 20),
                           ),
                     Container(
@@ -55,7 +55,7 @@ class SerivceListName extends StatelessWidget {
                     serverName == null
                         ? LoadingStatusContainer()
                         : Text(
-                            '$serverName',
+                            'Server name',
                             style: TextStyle(fontSize: 20),
                           ),
                   ],
@@ -66,7 +66,7 @@ class SerivceListName extends StatelessWidget {
                 serverStatus == null
                     ? LoadingStatusContainer()
                     : Text(
-                        '$serverStatus',
+                        'Service Status',
                         style: TextStyle(fontSize: 14),
                       ),
               ],

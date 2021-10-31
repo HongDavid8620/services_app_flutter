@@ -16,11 +16,6 @@ class TextFieldCheckSingInEvent extends TextFieldEvent {
   TextFieldCheckSingInEvent({required this.email,this.passwd:''});
 }
 
-class TextFieldPasswordEvent extends TextFieldEvent {
-  final String? newPasswd;
-  TextFieldPasswordEvent({this.newPasswd});
-}
-
 class TextFieldRetypeEvent extends TextFieldEvent {
   final String? newPasswd;
   final String? retypePasswd;

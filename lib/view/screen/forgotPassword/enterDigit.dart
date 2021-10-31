@@ -6,7 +6,6 @@ import 'package:services_flutter/view_model/bloc/debouncer/debouncer.dart';
 import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldEvent.dart';
 import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.dart';
 import 'package:services_flutter/view_model/bloc/textField_bloc/textField_bloc.dart';
-import 'package:services_flutter/view_model/service/password/submitNewPasswordService.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -91,8 +90,6 @@ class _EnterDigitState extends State<EnterDigit> {
                         onChanged    : (value) {
                           if(value.length == 6)
                           {
-                            var respone = SubmitNewPasswordService.submitNewPassword();
-                            if(respone != 'error')
                             _debouncer.run(() {
                               _pinValidateBloc!.add(PinCheckEvent(field: value));
                             });

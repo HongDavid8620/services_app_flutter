@@ -1,10 +1,8 @@
 import 'package:services_flutter/view/screen/dashboard/dashboard.dart';
+import 'package:services_flutter/view/screen/signIn/signIn.dart';
 import 'package:services_flutter/view/screen/profile/profilePage.dart';
 import 'package:services_flutter/view/screen/setting/settingPage.dart';
-import 'package:services_flutter/view/screen/signIn/signIn.dart';
-import 'package:services_flutter/view/screen/signIn/signWrapper.dart';
 import 'package:services_flutter/view/widget/DrawerList.dart';
-import 'package:services_flutter/view_model/service/auth/logoutService.dart';
 import 'package:flutter/material.dart';
 
 class CustomeDrawer extends StatelessWidget {
@@ -137,16 +135,12 @@ class CustomeDrawer extends StatelessWidget {
                 icon  : Icons.logout_outlined,
                 text  : 'Log Out',
                 onTap : () async {
-                await Future.delayed(Duration(milliseconds: 100));
-                Navigator.pop(context);
-                if (await LogoutService.getAuthorizeToken() != null) {
                   await Future.delayed(Duration(milliseconds: 100));
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => SignInWrapper()));
-                } else {
-                  final snackBar = SnackBar(content: Text('Oh! Error!'));
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                }
-              },
+                  Navigator.pop(context);
+                  await Future.delayed(Duration(milliseconds: 100));
+                  Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => SignInPage()));
+                },
             ),
           ),
         ],

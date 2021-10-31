@@ -5,4 +5,3 @@ class TextFieldState {
   final TextFieldError textFieldError;
   TextFieldState({this.textFieldError : TextFieldError.Nothing});
 }
-  

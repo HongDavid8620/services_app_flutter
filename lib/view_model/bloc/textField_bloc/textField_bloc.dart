@@ -4,16 +4,26 @@ import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldState.d
 import 'package:services_flutter/view_model/bloc/textField_bloc/TextFieldValidation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class TextFieldBloc extends Bloc<TextFieldEvent, TextFieldState> with TextFieldValidation {
+class TextFieldBloc extends Bloc<TextFieldEvent, TextFieldState>
+  with TextFieldValidation {
   TextFieldBloc() : super(TextFieldState());
-
+  
   passwordValidation(field) {
-    if (this.isFieldEmpty(field) || field.length > 30)
+    if (this.isFieldEmpty(field)) {
       return true;
-    else
+    } else {
       return false;
+    }
   }
-
+  
+  // checkEmailValide(value) {
+  //     if (emailValidate(value)) {
+  //       return true;
+  //     } else {
+  //       return false;
+  //     }
+  //   }
+  
   //check empty and Invalide
   emailInValidation(field) {
     if (this.isFieldEmpty(field) || !emailValidate(field)) {
@@ -78,33 +88,29 @@ class TextFieldBloc extends Bloc<TextFieldEvent, TextFieldState> with TextFieldV
       }
     }
 
-    if (event is TextFieldNewPasswdEvent) {
+    if(event is TextFieldNewPasswdEvent){
       if (event.newPasswd == event.oldPasswd) {
         yield TextFieldState(textFieldError: TextFieldError.InvalidOldPasswd);
         return;
-      } else {
-        yield TextFieldState(textFieldError: TextFieldError.Validate);
-        return;
-      }
-    }
-
-    //event check validation password
-    if (event is TextFieldPasswordEvent) {
-      if (!this.validateWithSpecialChar(event.newPasswd)) {
-        yield TextFieldState(textFieldError: TextFieldError.InvalidPasswd);
-        return;
-      } else {
-        yield TextFieldState(textFieldError: TextFieldError.Validate);
-        return;
-      }
+      }else
+        {
+          yield TextFieldState(textFieldError: TextFieldError.Validate);
+          return;
+        }
     }
 
     //event check if the retype same or not
     if (event is TextFieldRetypeEvent) {
+      if (!this.validateWithSpecialChar(event.newPasswd)) {
+        yield TextFieldState(textFieldError: TextFieldError.InvalidPasswd);
+        return;
+      }
+
       if (event.retypePasswd == event.newPasswd) {
         yield TextFieldState(textFieldError: TextFieldError.Validate);
         return;
       } else {
+        print('checked8');
         yield TextFieldState(textFieldError: TextFieldError.Invalid);
         return;
       }
@@ -112,12 +118,16 @@ class TextFieldBloc extends Bloc<TextFieldEvent, TextFieldState> with TextFieldV
 
     //event check password Empty
     if (event is PasswordCheckEmptyEvent) {
-      yield TextFieldState(textFieldError: passwordValidation(event.field) ? TextFieldError.Invalid : TextFieldError.Validate);
+      yield TextFieldState(
+          textFieldError: passwordValidation(event.field) 
+              ? TextFieldError.Invalid : TextFieldError.Validate);
     }
 
     //event check email Empty and Validation
     if (event is EmailCheckEvent) {
-      yield TextFieldState(textFieldError: emailInValidation(event.field) ? TextFieldError.Invalid : TextFieldError.Validate);
+      yield TextFieldState(
+          textFieldError: emailInValidation(event.field)
+              ? TextFieldError.Invalid : TextFieldError.Validate);
     }
 
     //event check pin Validation
@@ -130,12 +140,9 @@ class TextFieldBloc extends Bloc<TextFieldEvent, TextFieldState> with TextFieldV
     }
 
     //event use for navigation
-    if (event is SubmitEvent) {
-      if (event.textFieldError == TextFieldError.Validate) {
+    if(event is SubmitEvent){
+      if(event.textFieldError == TextFieldError.Validate){
         yield TextFieldState(textFieldError: TextFieldError.Validate);
-      }
-      else if (event.textFieldError == TextFieldError.Invalid) {
-        yield TextFieldState(textFieldError: TextFieldError.Invalid);
       }
     }
   }
